@@ -1,0 +1,37 @@
+{
+    "name": "nrgo-std",
+    "image": "golang:1.23rc2",
+    "workspaceFolder": "/workspace/nrgo-std",
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:2": {},
+        "ghcr.io/devcontainers/features/github-cli:1": {}
+    },
+    "mounts": [
+        {
+            "source": "go",
+            "target": "/go",
+            "type": "volume"
+        },
+        {
+            "source": "go",
+            "target": "/root/.cache",
+            "type": "volume"
+        },
+        {
+            "source": "${localEnv:HOME}/.config/gh/hosts.yml",
+            "target": "/root/.config/gh/hosts.yml",
+            "type": "bind"
+        }
+    ],
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "zsh"
+            },
+            "extensions": [
+                "golang.go",
+                "streetsidesoftware.code-spell-checker"
+            ]
+        }
+    }
+}
