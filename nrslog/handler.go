@@ -16,18 +16,21 @@ type Attributer interface {
 }
 
 type handler struct {
-	slog.Handler
+	hn          slog.Handler
 	app         *newrelic.Application
 	onlyForward bool
 }
 
 // NewHandler creates [slog.Handler] can send log event to newrelic.
 // Default output format is json.
-func NewHandler(app *newrelic.Application, opt ...HandlerOption) slog.Handler {
+func NewHandler(app *newrelic.Application, opts ...HandlerOption) slog.Handler {
 	h := handler{
-		Handler:     slog.NewJSONHandler(os.Stdout, nil),
+		hn:          slog.NewJSONHandler(os.Stdout, nil),
 		app:         app,
 		onlyForward: false,
+	}
+	for _, opt := range opts {
+		opt(&h)
 	}
 	return &h
 }
@@ -61,5 +64,17 @@ func (h *handler) Handle(ctx context.Context, record slog.Record) error {
 	if h.onlyForward {
 		return nil
 	}
-	return h.Handler.Handle(ctx, record)
+	return h.hn.Handle(ctx, record)
+}
+
+func (h *handler) WithAttrs(attrs []slog.Attr) slog.Handler {
+	return &handler{hn: h.hn.WithAttrs(attrs), app: h.app, onlyForward: h.onlyForward}
+}
+
+func (h *handler) WithGroup(name string) slog.Handler {
+	return &handler{hn: h.hn.WithGroup(name), app: h.app, onlyForward: h.onlyForward}
+}
+
+func (h *handler) Enabled(ctx context.Context, level slog.Level) bool {
+	return h.hn.Enabled(ctx, level)
 }

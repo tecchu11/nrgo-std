@@ -6,9 +6,9 @@ import "log/slog"
 type HandlerOption func(*handler)
 
 // WithHandler configures specific handler.
-func WithHandler(h slog.Handler) HandlerOption {
+func WithHandler(parent slog.Handler) HandlerOption {
 	return func(h *handler) {
-		h.Handler = h
+		h.hn = parent
 	}
 }
 
