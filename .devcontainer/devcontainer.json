@@ -8,12 +8,17 @@
     },
     "mounts": [
         {
+            "source": ".",
+            "target": "/workspace/nrgo-std",
+            "type": "bind"
+        },
+        {
             "source": "go",
             "target": "/go",
             "type": "volume"
         },
         {
-            "source": "go",
+            "source": "go-cache",
             "target": "/root/.cache",
             "type": "volume"
         },
