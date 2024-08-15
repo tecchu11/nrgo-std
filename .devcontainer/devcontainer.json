@@ -1,6 +1,6 @@
 {
     "name": "nrgo-std",
-    "image": "golang:1.23rc2",
+    "image": "golang:1.23.0",
     "workspaceFolder": "/workspace/nrgo-std",
     "features": {
         "ghcr.io/devcontainers/features/common-utils:2": {},

@@ -1,6 +1,6 @@
 module github.com/tecchu11/nrgo-std
 
-go 1.23rc2
+go 1.23.0
 
 require github.com/newrelic/go-agent/v3 v3.34.0
 
