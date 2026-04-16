@@ -2,7 +2,7 @@ module github.com/tecchu11/nrgo-std
 
 go 1.25
 
-require github.com/newrelic/go-agent/v3 v3.43.1
+require github.com/newrelic/go-agent/v3 v3.43.2
 
 require (
 	github.com/golang/protobuf v1.5.4 // indirect
