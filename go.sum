@@ -23,6 +23,8 @@ github.com/newrelic/go-agent/v3 v3.43.1 h1:ANp6NxTloZjlU20RbOUy2/g5fLb4hf70DRkNj
 github.com/newrelic/go-agent/v3 v3.43.1/go.mod h1:MFXnCId5xXMIJI6A/kbkg0DO48EVTsKcmNijMYphzTg=
 github.com/newrelic/go-agent/v3 v3.43.3 h1:0A6DkUBYK2bidV6jJDJ1SD2XkRlg976nl+SiEqkGTUQ=
 github.com/newrelic/go-agent/v3 v3.43.3/go.mod h1:MFXnCId5xXMIJI6A/kbkg0DO48EVTsKcmNijMYphzTg=
+github.com/newrelic/go-agent/v3 v3.44.2 h1:5/a6TTwk0IGgXqAhpABRloYRsw6npAcmnyuH7bOGzlQ=
+github.com/newrelic/go-agent/v3 v3.44.2/go.mod h1:5A2u/S0na/zIg5hS197XdK+ZkLqTRq5baFzJfVWrc3Q=
 golang.org/x/net v0.9.0 h1:aWJ/m6xSmxWBx+V0XRHTlrYrPG56jKsLdTFmsSsCzOM=
 golang.org/x/net v0.9.0/go.mod h1:d48xBJpPfHeWQsugry2m+kC02ZBRGRgulfHnEXEuWns=
 golang.org/x/net v0.25.0 h1:d/OCCoBEUq33pjydKrGQhw7IlUPI2Oylr+8qLx49kac=
